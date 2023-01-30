@@ -46,7 +46,7 @@ function getParamByUrl(key){
 	const url = new URL(location.url)
 	return url.searchParams.get(key)
 }
-
+// 注释
 export default{
 	getParamByUrl,
 	detectDeviceType,
