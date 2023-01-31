@@ -1,0 +1,21 @@
+{
+  "name": "web-front-util",
+  "version": "1.0.0",
+  "description": "前端工具",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yvan2415/web-front-util.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yvan2415/web-front-util/issues"
+  },
+  "homepage": "https://github.com/Yvan2415/web-front-util#readme"
+}
