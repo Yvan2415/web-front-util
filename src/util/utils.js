@@ -1,3 +1,22 @@
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+/**
+ * @description 返回当前文件的地址
+ * @why 在import导入的时候， 是没有__dirname, __filename，
+ * module这些属性的，所以需要手动去获取
+ */
+function fileName() {
+	return fileURLToPath(import.meta.url)
+}
+
+/**
+ * @description 返回当前文件夹的地址
+ */
+function dirname(){
+	return path.dirname(fileName())
+}
+
 /**
  * @description 生成随机颜色
  */
@@ -46,6 +65,20 @@ function getParamByUrl(key){
 	const url = new URL(location.url)
 	return url.searchParams.get(key)
 }
+
+/**
+ * @description 随机生成一个字符串
+ * @param { Numebr } length
+ */
+function randString (length, chars = '0123456789'){
+	let maxPos = chars.length
+	let target  = ''
+	for(let i = 0; i < length; i ++){
+		target += chars.charAt(Math.floor(Math.random() * maxPos))
+	}
+	return target
+}
+
 // 注释
 export default{
 	getParamByUrl,
@@ -53,5 +86,8 @@ export default{
 	scrollTo,
 	isDarkMode,
 	copyToClipboard,
-	generateRandomHexColor
+	generateRandomHexColor,
+	randString,
+	fileName,
+	dirname
 }
